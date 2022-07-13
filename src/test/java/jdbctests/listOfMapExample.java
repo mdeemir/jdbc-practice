@@ -17,6 +17,7 @@ public class listOfMapExample {
     public void test1(){
 
         //creating list for keeping all the rows maps
+        //OBJECT YAZDIK ÇÜNKÜ INT STRİNG HEPSİNİ KAPSIYOR
         List<Map<String,Object>> queryData = new ArrayList<>();
 
         Map<String,Object> row1 = new HashMap<>();
@@ -26,7 +27,7 @@ public class listOfMapExample {
         row1.put("salary",24000);
         row1.put("job_id","AD_PRES");
 
-        System.out.println(row1.toString());
+        System.out.println(row1.toString());//{job_id=AD_PRES, last_name=King, salary=24000, first_name=Steven}
 
         Map<String,Object> row2 = new HashMap<>();
 
@@ -35,14 +36,15 @@ public class listOfMapExample {
         row2.put("salary",17000);
         row2.put("job_id","AD_VP");
 
-        System.out.println(row2.toString());
+        System.out.println(row2.toString());//{job_id=AD_VP, last_name=Kochhar, salary=17000, first_name=Neena}
 
         //adding rows one by one to my list
         queryData.add(row1);
         queryData.add(row2);
 
         //get the steven lastname directly from the list
-        System.out.println(queryData.get(0).get("last_name"));
+        System.out.println(queryData.get(0).get("last_name"));//King
+
 
 
     }
@@ -66,13 +68,13 @@ public class listOfMapExample {
         List<Map<String,Object>> queryData = new ArrayList<>();
 
         Map<String,Object> row1 = new HashMap<>();
-
+//rsmd.getColumnName(1)--->first_name  resultSet.getString(1)--> Steven
         row1.put(rsmd.getColumnName(1),resultSet.getString(1));
         row1.put(rsmd.getColumnName(2),resultSet.getString(2));
         row1.put(rsmd.getColumnName(3),resultSet.getString(3));
         row1.put(rsmd.getColumnName(4),resultSet.getString(4));
 
-        System.out.println(row1.toString());
+        System.out.println(row1.toString()); //{JOB_ID=AD_PRES, SALARY=24000, LAST_NAME=King, FIRST_NAME=Steven}
 
         //move to second row
         resultSet.next();
@@ -84,8 +86,8 @@ public class listOfMapExample {
         row2.put(rsmd.getColumnName(3),resultSet.getString(3));
         row2.put(rsmd.getColumnName(4),resultSet.getString(4));
 
-        System.out.println(row2.toString());
-        //BREAK UNTIL 2:20
+        System.out.println(row2.toString());//{JOB_ID=AD_VP, SALARY=17000, LAST_NAME=Kochhar, FIRST_NAME=Neena}
+
 
         //adding rows one by one to my list
         queryData.add(row1);

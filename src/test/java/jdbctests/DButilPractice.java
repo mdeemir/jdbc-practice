@@ -17,7 +17,7 @@ public class DButilPractice {
         String query = "SELECT first_name,last_name,salary,job_id\n" +
                 "from employees\n" +
                 "where rownum <6";
-
+//alt + enter değişken oluşturmanın kısayolu
         List<Map<String, Object>> queryData = DBUtils.getQueryResultMap(query);
 
         //print the result
@@ -36,8 +36,8 @@ public class DButilPractice {
         DBUtils.createConnection();
         String query = "SELECT first_name,last_name,salary,job_id\n" +
                 "from employees\n" +
-                "where rownum <2";
-
+                "where rownum <2";// sadece tek satır varsa liste gerek yok sadece bir map yeterli
+//sadece map oluşturduk
         Map<String, Object> rowMap = DBUtils.getRowMap(query);
 
         System.out.println(rowMap.toString());

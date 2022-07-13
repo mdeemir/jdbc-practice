@@ -36,13 +36,13 @@ public class dynamic_list {
 
             Map<String,Object> row = new LinkedHashMap<>();
 
-            //some code to fill the dynamically
+            //some code to fill MAP the dynamically
             for (int i = 1; i <= colCount; i++) {
 
                  row.put(rsmd.getColumnName(i),resultSet.getObject(i));
 
             }
-            //BREAK UNTIL 3:33
+
 
             //add ready map row to the list
             queryData.add(row);
